@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.9.0.final using JasperReports Library version 6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporte" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="61d53501-f792-4dbb-a83a-6a0dc0fc604f">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="loire"/>
+	<parameter name="id" class="java.lang.Integer"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     *,
+     formulariorecoleccion.`idFormularioRecoleccion` AS formulariorecoleccion_idFormularioRecoleccion,
+     formulariorecoleccion.`fechaRecorrido` AS formulariorecoleccion_fechaRecorrido,
+     formulariorecoleccion.`CargaRegistrada` AS formulariorecoleccion_CargaRegistrada,
+     vehiculo.`placa` AS vehiculo_placa,
+     conductor.`primerNombre` AS conductor_primerNombre,
+     cliente.`tiposervicio` AS cliente_tiposervicio,
+     cliente.`fecha` AS cliente_fecha,
+     cliente.`razonsocial` AS cliente_razonsocial,
+     cliente.`nit` AS cliente_nit
+FROM
+     `cliente` cliente INNER JOIN `formulariorecoleccion` formulariorecoleccion ON cliente.`idcliente` = formulariorecoleccion.`idcliente`
+     INNER JOIN `vehiculo` vehiculo ON formulariorecoleccion.`idvehiculo` = vehiculo.`idvehiculo`
+     INNER JOIN `conductor` conductor ON formulariorecoleccion.`idConductor_conductor` = conductor.`idConductor`
+     AND conductor.`idConductor` = vehiculo.`idconductor`
+WHERE
+     cliente.estado = 'completado'
+     and cliente.idcliente = $P{id}]]>
+	</queryString>
+	<field name="idcliente" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="idcliente"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cliente"/>
+	</field>
+	<field name="persona_idpersona" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="persona_idpersona"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cliente"/>
+	</field>
+	<field name="razonsocial" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="razonsocial"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cliente"/>
+	</field>
+	<field name="nit" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nit"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cliente"/>
+	</field>
+	<field name="direccion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="direccion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cliente"/>
+	</field>
+	<field name="telefono" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="telefono"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cliente"/>
+	</field>
+	<field name="tiposervicio" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tiposervicio"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cliente"/>
+	</field>
+	<field name="fecha" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="fecha"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cliente"/>
+	</field>
+	<field name="mensaje" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="mensaje"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cliente"/>
+	</field>
+	<field name="estado" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="estado"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cliente"/>
+	</field>
+	<field name="idFormularioRecoleccion" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="idFormularioRecoleccion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="formulariorecoleccion"/>
+	</field>
+	<field name="idConductor_conductor" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="idConductor_conductor"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="formulariorecoleccion"/>
+	</field>
+	<field name="tipovehiculo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tipovehiculo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="formulariorecoleccion"/>
+	</field>
+	<field name="idvehiculo" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="idvehiculo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="formulariorecoleccion"/>
+	</field>
+	<field name="fechaRecorrido" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="fechaRecorrido"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="formulariorecoleccion"/>
+	</field>
+	<field name="idbascula" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="idbascula"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="formulariorecoleccion"/>
+	</field>
+	<field name="idprecintoseguridad" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="idprecintoseguridad"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="formulariorecoleccion"/>
+	</field>
+	<field name="CargaRegistrada" class="java.lang.Float">
+		<property name="com.jaspersoft.studio.field.label" value="CargaRegistrada"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="formulariorecoleccion"/>
+	</field>
+	<field name="COLUMN_19" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="idcliente"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="formulariorecoleccion"/>
+	</field>
+	<field name="COLUMN_20" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="idvehiculo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="vehiculo"/>
+	</field>
+	<field name="modelo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="modelo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="vehiculo"/>
+	</field>
+	<field name="placa" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="placa"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="vehiculo"/>
+	</field>
+	<field name="tipo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tipo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="vehiculo"/>
+	</field>
+	<field name="idconductor" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="idconductor"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="vehiculo"/>
+	</field>
+	<field name="COLUMN_25" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="estado"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="vehiculo"/>
+	</field>
+	<field name="idConductor" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="idConductor"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="conductor"/>
+	</field>
+	<field name="tipodocumento" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tipodocumento"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="conductor"/>
+	</field>
+	<field name="documento" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="documento"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="conductor"/>
+	</field>
+	<field name="primerApellido" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="primerApellido"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="conductor"/>
+	</field>
+	<field name="segundoApellido" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="segundoApellido"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="conductor"/>
+	</field>
+	<field name="primerNombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="primerNombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="conductor"/>
+	</field>
+	<field name="segundoNombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="segundoNombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="conductor"/>
+	</field>
+	<field name="estado1" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="estado1"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="conductor"/>
+	</field>
+	<field name="formulariorecoleccion_idFormularioRecoleccion" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="formulariorecoleccion_idFormularioRecoleccion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="formulariorecoleccion"/>
+	</field>
+	<field name="formulariorecoleccion_fechaRecorrido" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="formulariorecoleccion_fechaRecorrido"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="formulariorecoleccion"/>
+	</field>
+	<field name="formulariorecoleccion_CargaRegistrada" class="java.lang.Float">
+		<property name="com.jaspersoft.studio.field.label" value="formulariorecoleccion_CargaRegistrada"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="formulariorecoleccion"/>
+	</field>
+	<field name="vehiculo_placa" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="vehiculo_placa"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="vehiculo"/>
+	</field>
+	<field name="conductor_primerNombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="conductor_primerNombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="conductor"/>
+	</field>
+	<field name="cliente_tiposervicio" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cliente_tiposervicio"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cliente"/>
+	</field>
+	<field name="cliente_fecha" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cliente_fecha"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cliente"/>
+	</field>
+	<field name="cliente_razonsocial" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cliente_razonsocial"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cliente"/>
+	</field>
+	<field name="cliente_nit" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cliente_nit"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cliente"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="120" y="20" width="310" height="30" uuid="0d293edd-3e96-437f-832e-760feb4b3174"/>
+				<textElement textAlignment="Center">
+					<font size="19" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reporte de Servicio Completado]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="100" splitType="Stretch">
+			<staticText>
+				<reportElement x="80" y="0" width="400" height="30" uuid="aedb8b2d-6580-4319-8a54-e0dbceb2b1a1"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Se le informa al cliente que se ha completado el servicio solicitado satisfactoriamente.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="60" width="100" height="30" uuid="e451fe8a-96a4-4337-af26-f7a18e458998"/>
+				<text><![CDATA[Razón Social]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="60" width="100" height="30" uuid="83365d08-f7e7-4376-9ed6-a9ec2edf2172"/>
+				<text><![CDATA[Nit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="60" width="100" height="30" uuid="48cbbf4d-9542-4d86-988d-66656cc89cd8"/>
+				<text><![CDATA[Fecha de Inicio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="320" y="60" width="100" height="30" uuid="301cba25-007f-47d0-af6d-6a25fa92faa9"/>
+				<text><![CDATA[Tipo de Servicio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="420" y="60" width="100" height="30" uuid="39940764-e260-4274-90ef-eac9e12c6247"/>
+				<text><![CDATA[Conductor a Cargo]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="32" splitType="Stretch">
+			<textField>
+				<reportElement x="20" y="0" width="100" height="30" uuid="18af02b9-2519-4030-b5f6-8afe9686842a"/>
+				<textFieldExpression><![CDATA[$F{cliente_razonsocial}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="0" width="100" height="30" uuid="067216f3-8c50-4d57-ae44-8047b57de2f1"/>
+				<textFieldExpression><![CDATA[$F{cliente_nit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="220" y="0" width="100" height="30" uuid="3ffe1deb-ef3f-4c58-a792-3d4276554309"/>
+				<textFieldExpression><![CDATA[$F{cliente_fecha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="0" width="100" height="30" uuid="284352e2-d85f-4c59-a4c8-a3423cbebcc0"/>
+				<textFieldExpression><![CDATA[$F{cliente_tiposervicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="420" y="0" width="100" height="30" uuid="f7b151e0-50cd-462e-95b6-fc419c40985c"/>
+				<textFieldExpression><![CDATA[$F{conductor_primerNombre}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="57" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement x="227" y="10" width="100" height="30" uuid="a5277979-3ba9-4b68-a24b-ce18befbbdcf"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="1" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,82 @@
+ * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+ }
+body {
+  background:url(../css/img/leaves-108969_1920.jpg);  
+  font-family: 'Abel', sans-serif;
+ background-size: cover;
+}
+
+.navbar{
+  text-transform: uppercase;
+  font-weight: 700;
+  background: #fff;
+}
+.navbar-nav li{
+  padding-right: 10px;
+}
+.container-fluid{
+  margin-right: 0;
+  padding: 0;
+}
+.nav-link{
+  color:#808080 !important;
+}
+.nav-link:hover{
+  color:#38A207 !important;
+}
+
+
+/* Clases especiales*/
+
+ header{
+ 	width: 100%;
+ 	height: 100%;
+ 	background-size: 100% 100%;
+ 	background: rgba(255,255,255)
+ }
+ header img{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+ }
+ .centrado{
+  background: rgba(0,0,0,0.72);
+  position: absolute;
+  top: 60%;
+  left:60%;
+  transform:translate(-50%,-50%); 
+  color:#fff;
+  font-size: 40pt;
+ }
+/*Pie de pagina*/
+ #footer{
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
+.derechos {
+    background: rgba(0, 0, 0, 0.72);
+    padding: 15px 0px;
+    color: white;
+    text-align: center;
+    font-size: 1em;
+}
+.derechos a {
+    color: #fff;
+}
+@media (max-width: 768px){
+.content-form {
+        width: 100%; 
+            border-radius: 0px;
+}
+.width-6 {
+    width: 100%;
+}
+.btn {
+    
+        width: 100%;
+}
+}

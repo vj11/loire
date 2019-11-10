@@ -1,0 +1,189 @@
+*{
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+ }
+body{
+	background: url(img/leaves-57427_1280.jpg);
+}
+ /* Clases especiales */
+ .borde{
+ 	border: 1px ;
+ }
+
+
+/*Contenedor*/
+.contenedor{
+	font-family: 'Roboto', sans-serif;
+	width: 100%;
+	margin:auto;
+}
+.container{
+	text-align: center;
+	margin: 0;
+	padding:0;
+}
+/*Navegador*/
+.navbar{
+	text-transform: uppercase;
+	font-weight: 700;
+	background: rgba(0,0,0,0.6) !important;
+}
+
+.navbar-nav li{
+	padding-right: 10px;
+}
+.container-fluid{
+	margin:0;
+	padding: 0;
+}
+.nav-link{
+	color:#808080 !important;
+}
+.nav-link:hover{
+	color:#38A207 !important;
+}
+nav ul li ul{
+	display: none;
+}
+ nav ul li:hover>ul{
+ 	display: block;
+ }
+  nav ul li a{
+ 	display: block;
+ 	padding: 15px 0 14px 0;
+ 	text-decoration: none;
+ 	color: #fff;
+ }
+  ul li ul li ul {
+ 	left: 120px;		
+ 	top: 2px;
+ }
+
+/*Principal*/
+main{
+	width: 100%;
+}
+
+/*Barra lateral*/
+/*aside{
+	width: 250px;
+	height: 1800px;
+	float: left;
+	background:#191916;
+}
+aside ul{
+	list-style: none;
+	margin: 0 0 0 25px;
+}
+aside a{
+	display: block;
+	padding: 8px;
+	text-decoration: none;
+	color: #fff;
+}*/
+
+
+/*Area de trabajo*/
+.aside{
+	background:#191916;
+}
+
+.perfil{
+	width: 100%;
+	height: 16%;
+}
+.perfil .foto{
+	width: 40%;
+	height: 100%;
+	padding: 28px 15px 15px 15px;
+}
+.icono{
+	width: 50px;
+	height: 70px;
+}
+.foto i{
+	width: 80px;
+	height: 90px;
+	padding: 5px;
+	background: #fff;
+	border-radius: 5px;
+}
+.perfil .info-perfil{
+	width: 60%;
+	height: 100%;
+}
+.info-perfil ul{
+	padding: 10px;
+}
+.info-perfil a{
+	padding: 3px;
+}
+.info-perfil a:hover{
+	color:#ccc;
+}
+.caption{
+	margin-right: 15px;
+	position: absolute;
+	top: 20%;
+	z-index: 10;
+	color: #fff;
+}
+.caption h3{
+	text-transform: uppercase;
+	font-size: 2.0rem;
+	font-weight: bolder;
+}
+.caption p{
+	font-size: 1rem;
+	font-weight: 600;
+}
+.caption1{
+	margin-right: 15px;
+	position: absolute;
+	top: 20%;
+	z-index: 10;
+	color: #000;
+}
+.caption1 h3{
+	text-transform: uppercase;
+	font-size: 2.0rem;
+	font-weight: bolder;
+}
+.caption1 p{
+	font-size: 1rem;
+	font-weight: 600;
+}
+.documentacion{
+
+}
+
+.modulo{
+	width: 100%;
+	height: 21%;
+	padding: 10px 10px 10px 10px;
+	color: #fff;
+}
+.modulo h2{
+	text-align: center;
+	margin: 0 0 10px 0;
+}
+.modulo h3{
+	text-align: center;
+	margin:0 0 10px 0;
+}
+.modulo a:hover{
+	background: rgba(242,177,52,0);
+	border-left: 30px solid #34362F;
+}
+section{
+	height: 100%;
+	position: relative;
+
+}
+.controls{
+	text-align: center;
+	padding: 30px 10px 10px;
+}
+
+
